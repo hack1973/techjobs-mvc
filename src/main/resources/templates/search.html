@@ -38,6 +38,13 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+    <div th:if="${jobs}">
+        <p th:text="'Searched by: ' + ${#strings.capitalizeWords(selectedColumn)} + '/' + ${#strings.capitalizeWords(keyword)}"></p>
+        <p th:text="'Displaying ' + ${jobs.size()} + ' Jobs'"></p>
+
+        <div th:replace="fragments :: results"></div>
+    </div>
+
 </div>
 
 </body>
